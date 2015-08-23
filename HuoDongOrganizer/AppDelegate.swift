@@ -16,6 +16,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        if(AppConfig.sharedAppConfig.isUserLogin())
+        {
+            //already login
+        }else
+        {
+            var storyBoard=UIStoryboard(name:"LoginSB",bundle:nil);
+            self.window?.rootViewController=storyBoard.instantiateInitialViewController() as? UIViewController
+            
+            //未登录
+        }
+        
+        
         return true
     }
 
